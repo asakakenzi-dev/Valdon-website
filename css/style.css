@@ -5,3 +5,11 @@
   --olive:#6B7F4E;
   --text:#2B2B2B;
 }
+
+* {
+  box-sizing: border-box; margin:0;
+}
+
+body {
+  font:16px/1.6 'Poppins', Lato, sans-serif; background: var(--cream) color: var(--text);
+}
