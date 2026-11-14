@@ -144,3 +144,19 @@ th {
   background: var(--olive);
   color: #fff;
 }
+
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #cdb9a0;
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+}
+
+
