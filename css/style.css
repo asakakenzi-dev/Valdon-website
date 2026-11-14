@@ -72,3 +72,19 @@ nav ul a:hover {
   color: var(--terracotta);
 }
 
+.btn {
+  display: inline-block;
+  background: var(--terracotta);
+  color: #fff;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 6px;
+  font: 600 16px 'Poppins', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--brown);
+}
+
