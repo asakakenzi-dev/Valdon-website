@@ -159,4 +159,26 @@ input, select, textarea {
   background: #fff;
 }
 
+footer {
+  background: var(--text);
+  color: var(--cream);
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 14px;
+}
 
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) { 
+  nav ul { gap: 12px;
+  font-size: 14px; 
+         }
+}
