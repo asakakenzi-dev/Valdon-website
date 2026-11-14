@@ -127,3 +127,20 @@ nav ul a:hover {
   font-weight: 600;
   color: var(--terracotta);
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #ead9c3;
+}
+
+th {
+  background: var(--olive);
+  color: #fff;
+}
