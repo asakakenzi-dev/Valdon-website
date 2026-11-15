@@ -101,7 +101,7 @@ nav ul a:hover {
 }
 
 .hero p {
-  pax-width: 560px;
+  max-width: 560px;
   margin: 16px auto 28px;
 }
 
@@ -116,16 +116,17 @@ nav ul a:hover {
   border: 1px solid #ead9c3;
   border-radius: 8px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 6px;
+.card .btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
-.price {
-  font-weight: 600;
-  color: var(--terracotta);
+.card .price {
+  margin-bottom: 14px;
 }
 
 table {
