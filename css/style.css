@@ -1,8 +1,8 @@
 :root {
-  --brown: #5C3D2E; 
-  --cream: #FFF6E9;  
-  --terracotta: #E07A3F; 
-  --olive: #6B7F4E;  
+  --brown: #5C3D2E;   /* primary */
+  --cream: #FFF6E9;   /* background */
+  --terracotta: #E07A3F; /* buttons */
+  --olive: #6B7F4E;   /* highlights */
   --text: #2B2B2B;
 }
 * { 
@@ -135,6 +135,15 @@ nav ul a:hover {
   padding: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.card-img {
+  width: calc(100% + 40px);
+  margin: -20px -20px 16px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px 8px 0 0;
 }
 
 .card .btn {
