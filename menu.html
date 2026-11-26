@@ -15,9 +15,29 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html" aria-current="page">Menu</a></li>
-                    
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="menu.html#cart">Cart <span class="cart-badge" data-cart-count>0</span></a></li>
                 </ul>
             </nav>
         </header>
+
+        <section class="page-head">
+            <h1>Menu / Order Online</h1>
+            <p>Pick your favorites, choose your delivery area, and pay the way you choose.</p>
+        </section>
+
+        <!--MENU & CART-->
+        <section id="order">
+            <div class="filters" role="group" aria-label="Filter menu by category">
+                <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+                <button class="chip" type="button" data-filter="signature" aria-pressed="false">Signature Picks</button>
+                <button class="chip" type="button" data-filter="meals" aria-pressed="false">Meals</button>
+                <button class="chip" type="button" data-filter="snacks" aria-pressed="false">Snacks</button>
+                <button class="chip" type="button" data-filter="sweets" aria-pressed="false">Sweets</button>
+                <button class="chip" type="button" data-filter="drinks" aria-pressed="false">Drinks</button>
+                <button class="chip" type="button" data-filter="addons" aria-pressed="false">Add-ons</button>
+            </div>
+        </section>
     </body>
 </html>
