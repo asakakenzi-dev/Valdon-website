@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Delivery & Order Tracking | Sugar N' Spice Home Café</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/delivery.ss">
+    </head>
+    <body>
+        <header>
+            <nav aria-label="Main">
+                <a class="logo" href="index.html"><img src="images/logo.avif" alt="Sugar N' Spice Home Café"></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="delivery.html" aria-current="page">Delivery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="menu.html#cart">Cart <span class="cart-badge" data-cart-count>0</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="page-head">
+            <h1>Delivery Info</h1>
+            <p>Delivery areas, fees, payment options, and live order tracking.</p>
+        </section>
+
+        <!--DELIVERY AREAS-->
+        <section id="zones">
+            <h2>Delivery Areas &amp; Fees</h2>
+            <table>
+                <tr><th>Area</th><th>Fee</th><th>Estimated Time</th></tr>
+                <tr><td>Dologon Crossing</td><td>₱30</td><td>20-30 min</td></tr>
+                <tr><td>Maramag Poblacion</td><td>₱50</td><td>30-45 min</td></tr>
+                <tr><td>Nearby Barangays</td><td>₱80</td><td>45-60 min</td></tr>
+            </table>
+            <p style="margin-top: 12px;"><strong>Delivery Hours:</strong><span class="placeholder">[Add Opening Hours]</span></p>
+            <p style="margin-top: 12px;">You'll receive SMS or email updates as your order is prepared and delivered.</p>
+        </section>
+
+        <!--PAYMENT OPTIONS-->
+        <section id="payments">
+            <h2>Payment Options</h2>
+            <div class="grid">
+                <div class="card"><h3>GCash</h3><p>Pay with GCash. We text you a payment request after you place your order.</p></div>
+                <div class="card"><h3>Maya</h3><p>Pay with your Maya wallet. We text you a payment request after you place your order.</p></div>
+                <div class="card"><h3>Debit / Credit Card</h3><p>Pay through a secure card payment link sent by SMS.</p></div>
+                <div class="card"><h3>Cash on Delivery</h3><p>Pay the rider in cash when your order arrives. Exact change is appreciated.</p></div>
+            </div>
+            <p style="margin-top: 16px;">Ready to order? <a href="menu.html">Go to the menu</a></p>
+        </section>
+
+        <!--ORDER TRACKING-->
+        <section id="track">
+            <h2>Track Your Order</h2>
+            <p style="margin-bottom: 20px;">Enter the order number you received when you placed your order (for example, SNS-1234)</p>
+            <form class="track-form" id="track-form">
+                <label class="field">Order number
+                    <input type="text" id="order-id" name="order" placeholder="SNS-1234" autocomplete="off" required>
+                </label>
+                <button class="btn" type="submit">Track Order</button>
+            </form>
+            <div id="track-result" aria-live="polite"></div>
+        </section>
+
+        <!--FOOTER-->
+    <footer>
+        <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Privacy Statmenets</a></li>
+            <li><a href="#">Refund &amp; Cancellation</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+        <p>© 2026 Sugar N' Spice Home Café</p>
+    </footer>
+    </body>
+</html>
