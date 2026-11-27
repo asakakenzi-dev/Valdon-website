@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact | Sugar N' Spice Café</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contact.css">
+    </head>
+    <body>
+        <header>
+            <nav aria-label="Main">
+                <a class="logo" href="index.html"><img src="images/logo.avif" alt="Sugar N' Spice Home Café">Sugar N' Spice</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    <li><a href="menu.html#cart">Cart <span class="cart-badge" data-cart-count>0</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="page-head">
+            <h1>Contact</h1>
+            <p>Questions, catering, or bulk orders? We would love to hear from you</p>
+        </section>
+
+        <section id="contact">
+            <div class="contact-layout">
+                <div>
+                    <h2>Visit or Call Us</h2>
+                    <ul class="details">
+                        <li><strong>Address</strong>P1, Handugan Residence, Dologon Crossing, Maramag, Bukidnon</li>
+                        <li><strong>Phone</strong><span class="placeholder">[Add phone number]</span></li>
+                        <li><strong>Opening hours</strong><span class="placeholder">[Add opening hours]</span></li>
+                        <li><strong>Follow Us</strong><a href="#">Facebook</a> &middot; <a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Send a Message</h2>
+                    <p style="margin-bottom: 20px;">Catering or bulk order? Send us a message.</p>
+                    <form id="contact-form">
+                        <label class="field">Name
+                            <input type="text" name="name" autocomplete="name" requred>
+                        </label>
+                        <label class="field">Email
+                            <input type="email" name="email" autocomplete="email" required>
+                        </label>
+                        <label class="field">Mobile Number (optional)
+                            <input type="tel" name="phone" autocomplete="tel" inputmode="tel">
+                        </label>
+                        <label class="field">Inquiry type
+                            <select name="type"><option>General Inquiry</option><option>Catering</option><option>Bulk Order</option></select>
+                        </label>
+                        <label class="field">Message
+                            <textarea name="message" rows="4" required></textarea>
+                        </label>
+                        <button class="btn" type="submit">Send Message</button>
+                        <p class="form-status" id="contact-status" role="status" hidden></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe title="Sugar N' Spice Home Café location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Dologon+Crossing,+Maramag,+Bukidnon&amp;output=embed"></iframe>
+            </div>
+        </section>
+
+        <footer>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms Of Use</a></li>
+                <li><a href="#">Privacy Statements</a></li>
+                <li><a href="#">Refund &amp; Cancellation</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+            <p>© 2026 Sugar N' Spice Home Café</p>
+        </footer>
+    </body>
+</html>
