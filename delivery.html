@@ -6,7 +6,7 @@
         <title>Delivery & Order Tracking | Sugar N' Spice Home Café</title>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/delivery.ss">
+        <link rel="stylesheet" href="css/delivery.css">
     </head>
     <body>
         <header>
@@ -17,7 +17,7 @@
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="delivery.html" aria-current="page">Delivery</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="menu.html#cart">Cart <span class="cart-badge" data-cart-count>0</span></a></li>
+                    <li><a href="menu.html#order-details">Order</a></li>
                 </ul>
             </nav>
         </header>
@@ -55,14 +55,17 @@
         <!--ORDER TRACKING-->
         <section id="track">
             <h2>Track Your Order</h2>
-            <p style="margin-bottom: 20px;">Enter the order number you received when you placed your order (for example, SNS-1234)</p>
-            <form class="track-form" id="track-form">
-                <label class="field">Order number
-                    <input type="text" id="order-id" name="order" placeholder="SNS-1234" autocomplete="off" required>
-                </label>
-                <button class="btn" type="submit">Track Order</button>
-            </form>
-            <div id="track-result" aria-live="polite"></div>
+            <p style="margin-bottom: 20px;">After you place an order, you will receive SMS or email updates at each step below. Need help with an order? <a href="contact.html">Contact us</a>.</p>
+            <div class="track-card">
+                <h3>Order Status Guide</h3>
+                <ol class="steps">
+                    <li class="step"><span class="dot" aria-hidden="true">1</span><div><strong>Order received</strong><small>We have your order and payment details.</small></div></li>
+                    <li class="step"><span class="dot" aria-hidden="true">2</span><div><strong>Preparing your food</strong><small>Our kitchen is cooking your order.</small></div></li>
+                    <li class="step"><span class="dot" aria-hidden="true">3</span><div><strong>Out for delivery</strong><small>Your rider is on the way.</small></div></li>
+                    <li class="step"><span class="dot" aria-hidden="true">4</span><div><strong>Delivered</strong><small>Enjoy your meal!</small></div></li>
+                </ol>
+                <p class="eta">Estimated delivery times are listed in the delivery areas table above.</p>
+            </div>
         </section>
 
         <!--FOOTER-->
@@ -70,7 +73,7 @@
         <ul>
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Terms Of Use</a></li>
-            <li><a href="#">Privacy Statmenets</a></li>
+            <li><a href="#">Privacy Statements</a></li>
             <li><a href="#">Refund &amp; Cancellation</a></li>
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Instagram</a></li>
