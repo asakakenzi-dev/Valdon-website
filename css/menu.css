@@ -29,6 +29,7 @@
   background: var(--cream);
 }
 
+
 #f-all:checked ~ .filters label[for="f-all"],
 #f-signature:checked ~ .filters label[for="f-signature"],
 #f-meals:checked ~ .filters label[for="f-meals"],
@@ -47,10 +48,11 @@
 #f-snacks:focus-visible ~ .filters label[for="f-snacks"],
 #f-sweets:focus-visible ~ .filters label[for="f-sweets"],
 #f-drinks:focus-visible ~ .filters label[for="f-drinks"],
-#f-addons:focus-visible ~ .filters label[for="f-adodns"] {
+#f-addons:focus-visible ~ .filters label[for="f-addons"] {
   outline: 3px solid var(--terracotta);
   outline-offset: 2px;
 }
+
 
 #f-signature:checked ~ .store .menu-cat:not([data-group="signature"]),
 #f-meals:checked ~ .store .menu-cat:not([data-group="meals"]),
@@ -106,6 +108,13 @@
   color: var(--text);
 }
 
+.card select.size {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
 .card .qty-field {
   margin-top: auto;
 }
@@ -118,46 +127,6 @@
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 16px;
   margin-top: 14px;
-}
-
-.items {
-  list-style: none;
-  padding: 0;
-}
-
-.item {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  gap: 6px 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid #ead9c3;
-}
-
-.item-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.item-name {
-  font-weight: 600;
-}
-
-.item-note {
-  font-size: 13px;
-  color: #6b5a4e;
-}
-
-.item-price {
-  min-width: 56px;
-  text-align: right;
-  font-weight: 600;
-  color: var(--terracotta);
-}
-
-.item select.size {
-  padding: 8px;
-  font-size: 14px;
 }
 
 .cart {
@@ -235,18 +204,6 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-.cat-photo {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 8;
-  object-fit: cover;
-  object-position: center 40%;
-  margin: 14px 0 6px;
-  border: 1px solid #ead9c3;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(92, 61, 46, 0.15);
-}
-
 @media (max-width: 860px) {
   .store {
     grid-template-columns: 1fr;
@@ -263,18 +220,6 @@
 }
 
 @media (max-width: 520px) {
-  .cat-photo {
-    aspect-ratio: 4 / 3;
-  }
-
-  .item {
-    grid-template-columns: 1fr auto;
-  }
-
-  .item-info {
-    grid-column: 1 / -1;
-  }
-
   .pay-options {
     grid-template-columns: 1fr;
   }
