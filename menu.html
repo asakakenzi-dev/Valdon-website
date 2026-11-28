@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Menu & Order Online | Sugar N' Spice Home Café</title>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/menu.css">
     </head>
     <body>
         <header>
@@ -18,7 +18,7 @@
                     <li><a href="menu.html" aria-current="page">Menu</a></li>
                     <li><a href="delivery.html">Delivery</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="menu.html#cart">Cart <span class="cart-badge" data-cart-count>0</span></a></li>
+                    <li><a href="menu.html#order-details">Order</a></li>
                 </ul>
             </nav>
         </header>
@@ -30,40 +30,48 @@
 
 
         <section id="order">
+            <input class="filter-input" type="radio" name="filter" id="f-all" checked>
+            <input class="filter-input" type="radio" name="filter" id="f-signature">
+            <input class="filter-input" type="radio" name="filter" id="f-meals">
+            <input class="filter-input" type="radio" name="filter" id="f-snacks">
+            <input class="filter-input" type="radio" name="filter" id="f-sweets">
+            <input class="filter-input" type="radio" name="filter" id="f-drinks">
+            <input class="filter-input" type="radio" name="filter" id="f-addons">
+
             <div class="filters" role="group" aria-label="Filter menu by category">
-                <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-                <button class="chip" type="button" data-filter="signature" aria-pressed="true">Signature Picks</button>
-                <button class="chip" type="button" data-filter="meals" aria-pressed="true">Meals</button>
-                <button class="chip" type="button" data-filter="snacks" aria-pressed="true">Snacks</button>
-                <button class="chip" type="button" data-filter="sweets" aria-pressed="true">Sweets</button>
-                <button class="chip" type="button" data-filter="drinks" aria-pressed="true">Drinks</button>
-                <button class="chip" type="button" data-filter="addons" aria-pressed="true">Add-ons</button>
+                <label class="chip" for="f-all">All</label>
+                <label class="chip" for="f-signature">Signature Picks</label>
+                <label class="chip" for="f-meals">Meals</label>
+                <label class="chip" for="f-snacks">Snacks</label>
+                <label class="chip" for="f-sweets">Sweets</label>
+                <label class="chip" for="f-drinks">Drinks</label>
+                <label class="chip" for="f-addons">Add-ons</label>
             </div>
 
             <div class="store">
                 <div class="menu">
-                    <div class="menu-cat" data-group="signature" id="sugnature">
+                    <div class="menu-cat" data-group="signature" id="signature">
                         <h3>Signature Picks</h3>
                         <div class="grid">
-                            <article class="card" data-name="Iced Coffee" data-price="99">
+                            <article class="card">
                                 <img class="card-img" src="images/two-glasses-thai-iced-coffee.jpg" alt="Iced Coffee" loading="lazy">
                                 <h3>Iced Coffee</h3><p>Regular or Large</p><p class="price">₱99</p>
-                                <button class="btn add" type="button">Add to Cart</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_iced_coffee" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Iced Coffee"></label>
                             </article>
-                            <article class="card" data-name="Lechon Kawali" data-price="180">
+                            <article class="card">
                                 <img class="card-img" src="images/ND-Lechon-Kawali-bflv-threeByTwoLargeAt2X.jpg" alt="Crispy Lechon Kawali" loading="lazy">
                                 <h3>Lechon Kawali</h3><p>Crispy Pork Belly w/ Rice</p><p class="price">₱180</p>
-                                <button class="btn add" type="button">Add to Cart</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_lechon_kawali" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Lechon Kawali"></label>
                             </article>
-                            <article class="card" data-name="Nachos" data-price="150">
+                            <article class="card">
                                 <img class="card-img" src="images/nachos.jpg" alt="Nachos" loading="lazy">
                                 <h3>Nachos</h3><p>Add Cheese or Extra Toppings</p><p class="price">₱150</p>
-                                <button class="btn add" type="button">Add to Cart</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_nachos" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Nachos"></label>
                             </article>
-                            <article class="card" data-name="Dessert of the Day" data-price="120">
+                            <article class="card">
                                 <img class="card-img" src="images/chocolate-cream-pie-93-1.jpg" alt="Chocolate cream pie" loading="lazy">
                                 <h3>Dessert of the Day</h3><p>Ask about today's sweets</p><p class="price">₱120</p>
-                                <button class="btn add" type="button">Add to Cart</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_dessert_of_the_day" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Dessert of the Day"></label>
                             </article>
                         </div>
                     </div>
@@ -72,34 +80,34 @@
                         <h3>Platters</h3>
                         <img class="cat-photo" src="images/chickenwings.jpg" alt="Chicken Wings" loading="lazy">
                         <ul class="items">
-                            <li class="item" data-name="Fried Chicken Wings" data-price="235">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Fried Chicken Wings</span></div>
                                 <span class="item-price">₱235</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Added Chicken Wings to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_fried_chicken_wings" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Fried Chicken Wings"></label>
                             </li>
                             <img class="cat-photo" src="images/parmesan wings.jpg" alt="Parmesan Wings" loading="lazy">
-                            <li class="item" data-name="Garlic Parmesan Wings" data-price="235">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Garlic Parmesan Wings</span></div>
                                 <span class="item-price">₱235</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Garlic Parmesan Wings to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_garlic_parmesan_wings" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Garlic Parmesan Wings"></label>
                             </li>
                             <img class="cat-photo" src="images/honeygarlic.jpg">
-                             <li class="item" data-name="Honey Garlic Wings" data-price="240">
+                             <li class="item">
                                 <div class="item-info"><span class="item-name">Honey Garlic Wings</span></div>
                                 <span class="item-price">₱240</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Honey Garlic Wings to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_honey_garlic_wings" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Honey Garlic Wings"></label>
                             </li>
                             <img class="cat-photo" src="images/buttershrimp.jpg">
-                            <li class="item" data-name="Garlic Buttered Shrimps" data-price="310">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Garlic Buttered Shrimps</span></div>
                                 <span class="item-price">₱310</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Garlic Buttered Shrimps to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_garlic_buttered_shrimps" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Garlic Buttered Shrimps"></label>
                             </li>
                             <img class="cat-photo" src="images/tenders.jpg">
-                            <li class="item" data-name="Chicken Tenders" data-price="165">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Chicken Tenders</span></div>
                                 <span class="item-price">₱165</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Chicken Tenders to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_chicken_tenders" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Chicken Tenders"></label>
                             </li>
                         </ul>
                     </div>
@@ -109,22 +117,22 @@
                         <p class="cat-note">Unli rice with every combo.</p>
                         <img class="cat-photo" src="images/chicken&icetea.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Fried Chicken Combo with Iced Tea" data-price="120">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Fried Chicken Combo with Iced Tea</span></div>
                                 <span class="item-price">₱120</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Fried Chicken with Iced Tea to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_fried_chicken_combo_with_iced_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Fried Chicken Combo with Iced Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/porkchop&icetea.jpg">
-                            <li class="item" data-name="Pork Chop with Iced Tea" data-price="139">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Pork Chop with Iced Tea</span></div>
                                 <span class="item-price">₱139</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Pork Chop with Iced Tea to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_pork_chop_with_iced_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Pork Chop with Iced Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/sisig.jpg">
-                            <li class="item" data-name="Kawali Sisig with Iced Tea" data-price="199">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Kawali Sisig with Iced Tea</span></div>
                                 <span class="item-price">₱199</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Kawali Sisig with Iced to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_kawali_sisig_with_iced_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Kawali Sisig with Iced Tea"></label>
                             </li>
                         </ul>
                     </div>
@@ -132,28 +140,28 @@
                         <h3>Pasta</h3>
                         <img class="cat-photo" src="images/alfredo.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Chicken Alfredo" data-price="139">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Chicken Alfredo</span></div>
                                 <span class="item-price">₱139</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Added Chicken Alfredo to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_chicken_alfredo" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Chicken Alfredo"></label>
                             </li>
                             <img class="cat-photo" src="images/carbonara.jpeg">
-                            <li class="item" data-name="Creamy Carbonara" data-price="139">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Creamy Carbonara</span></div>
                                 <span class="item-price">₱139</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Added Creamy Carbonara to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_creamy_carbonara" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Creamy Carbonara"></label>
                             </li>
                             <img class="cat-photo" src="images/beef spaghetti.jpg">
-                            <li class="item" data-name="Beef Spaghetti" data-price="139">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Beef Spaghetti</span></div>
                                 <span class="item-price">₱139</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Added Beef Spaghetti to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_beef_spaghetti" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Beef Spaghetti"></label>
                             </li>
                             <img class="cat-photo" src="images/lasagna.jpeg">
-                            <li class="item" data-name="Beef Lasagna" data-price="169">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Beef Lasagna</span></div>
                                 <span class="item-price">₱169</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Beef Lasagna to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_beef_lasagna" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Beef Lasagna"></label>
                             </li>
                         </ul>
                     </div>
@@ -161,28 +169,28 @@
                         <h3>Snacks</h3>
                         <img class="cat-photo" src="images/burger&icetea.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Chicken Burger with Fries &amp; Iced Tea" data-price="145">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Chicken Burger with Fries &amp; Iced Tea</span></div>
                                 <span class="item-price">₱145</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Chicken Burger with Fries &amp; Iced Tea to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_chicken_burger_with_fries_iced_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Chicken Burger with Fries &amp; Iced Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/nachos.jpg">
-                            <li class="item" data-name="Nacho Chips" data-price="179">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Nacho Chips</span><span class="item-note">Good for 2-3</span></div>
                                 <span class="item-price">₱179</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Nacho Chips to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_nacho_chips" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Nacho Chips"></label>
                             </li>
                             <img class="cat-photo" src="images/cheesy fries.jpg">
-                            <li class="item" data-name="Cheesy Fries" data-price="169">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Cheesy Fries</span><span class="item-note">Good for 2-3</span></div>
                                 <span class="item-price">₱169</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Cheesy Fries to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_cheesy_fries" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Cheesy Fries"></label>
                             </li>
                             <img class="cat-photo" src="images/quesadilla.jpg">
-                            <li class="item" data-name="Beef Quesadilla" data-price="89">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Beef Quesadilla</span></div>
                                 <span class="item-price">₱89</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Beef Quesadilla to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_beef_quesadilla" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Beef Quesadilla"></label>
                             </li>
                         </ul>
                     </div>
@@ -190,22 +198,22 @@
                         <h3>Sweets</h3>
                         <img class="cat-photo" src="images/dreamcake.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Dream Cake" data-price="70">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Dream Cake</span></div>
                                 <span class="item-price">₱70</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Dream Cake to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_dream_cake" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Dream Cake"></label>
                             </li>
                             <img class="cat-photo" src="images/cookies.jpeg">
-                            <li class="item" data-name="Chocolate Chip Cookes" data-price="165">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Chocolate Chip Cookes</span><span class="item-note">Half Dozen</span></div>
                                 <span class="item-price">₱165</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Chocolate Chip Cookes to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_chocolate_chip_cookes" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Chocolate Chip Cookes"></label>
                             </li>
                             <img class="cat-photo" src="images/cheesecake.jpg">
-                            <li class="item" data-name="Burnet Basque Cheesecake" data-price="175">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Burnet Basque Cheesecake</span></div>
                                 <span class="item-price">₱175</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Burnet Basque Cheesecake to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_burnet_basque_cheesecake" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Burnet Basque Cheesecake"></label>
                             </li>
                         </ul>
                     </div>
@@ -213,38 +221,38 @@
                         <h3>Milk Tea</h3>
                         <img class="cat-photo" src="images/classic.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Classic Milk Tea">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Classic Milk Tea</span></div>
-                                <select class="size" aria-label="Size for Classic Milk Tea">
-                                    <option value="75" data-size="16 oz">16 oz - ₱75</option><option value="95" data-size="22 oz">22 oz - ₱95</option>
+                                <select class="size" name="size_classic_milk_tea" form="order-form" aria-label="Size for Classic Milk Tea">
+                                    <option value="16 oz">16 oz - ₱75</option><option value="22 oz">22 oz - ₱95</option>
                                 </select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Classic Milk Tea to cart">Add</button> 
+                                <label class="qty-field">Qty <input type="number" name="qty_classic_milk_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Classic Milk Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/wintermelon.jpg">
-                            <li class="item" data-name="Wintermelon Milk Tea">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Wintermelon Milk Tea</span></div>
-                                <select class="size" aria-label="Size for Wintermelon Milk tea">
-                                    <option value="75" data-size="16 oz">16 oz - ₱75</option><option value="95" data-size="22 oz">22 oz - ₱95</option>
+                                <select class="size" name="size_wintermelon_milk_tea" form="order-form" aria-label="Size for Wintermelon Milk tea">
+                                    <option value="16 oz">16 oz - ₱75</option><option value="22 oz">22 oz - ₱95</option>
                                 </select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Wintermelon Milk Tea to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_wintermelon_milk_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Wintermelon Milk Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/taro.jpg">
-                            <li class="item" data-name="Taro Milk Tea">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Taro Milk Tea</span></div>
-                                <select class="size" aria-label="Size for Taro Milk Tea"><option value="75" data-size="16 oz">16 oz – ₱75</option><option value="95" data-size="22 oz">22 oz – ₱95</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Taro Milk Tea to cart">Add</button>
+                                <select class="size" name="size_taro_milk_tea" form="order-form" aria-label="Size for Taro Milk Tea"><option value="16 oz">16 oz – ₱75</option><option value="22 oz">22 oz – ₱95</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_taro_milk_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Taro Milk Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/cookies&cream.jpg">
-                            <li class="item" data-name="Cookies &amp; Cream Milk Tea">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Cookies &amp; Cream Milk Tea</span></div>
-                                <select class="size" aria-label="Size for Cookies &amp; Cream Milk Tea"><option value="85" data-size="16 oz">16 oz – ₱85</option><option value="105" data-size="22 oz">22 oz – ₱105</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Cookies &amp; Cream Milk Tea to cart">Add</button>
+                                <select class="size" name="size_cookies_cream_milk_tea" form="order-form" aria-label="Size for Cookies &amp; Cream Milk Tea"><option value="16 oz">16 oz – ₱85</option><option value="22 oz">22 oz – ₱105</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_cookies_cream_milk_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Cookies &amp; Cream Milk Tea"></label>
                             </li>
                             <img class="cat-photo" src="images/matcha.jpg">
-                            <li class="item" data-name="Matcha Milk Tea">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Matcha Milk Tea</span></div>
-                                <select class="size" aria-label="Size for Matcha Milk Tea"><option value="85" data-size="16 oz">16 oz – ₱85</option><option value="110" data-size="22 oz">22 oz – ₱110</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Matcha Milk Tea to cart">Add</button>
+                                <select class="size" name="size_matcha_milk_tea" form="order-form" aria-label="Size for Matcha Milk Tea"><option value="16 oz">16 oz – ₱85</option><option value="22 oz">22 oz – ₱110</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_matcha_milk_tea" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Matcha Milk Tea"></label>
                             </li>
                         </ul>
                     </div>
@@ -252,22 +260,22 @@
                         <h3>Iced Coffee</h3>
                         <img class="cat-photo" src="images/americano.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Americano">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Americano</span></div>
-                                <select class="size" aria-label="Size for Americano"><option value="69" data-size="16 oz">16 oz - ₱69</option><option value="79" data-size="22 oz">22 oz - ₱79</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Americano to cart">Add</button>
+                                <select class="size" name="size_americano" form="order-form" aria-label="Size for Americano"><option value="16 oz">16 oz - ₱69</option><option value="22 oz">22 oz - ₱79</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_americano" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Americano"></label>
                             </li>
                             <img class="cat-photo" src="images/Latte.jpg">
-                            <li class="item" data-name="Cafe Latte">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Cafe Latte</span></div>
-                                <select class="size" aria-label="Size for Cafe Latte"><option value="69" data-size="16 oz">16 oz - ₱69</option><option value="79" data-size="22 oz">22 oz - ₱79</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Cafe Latte to cart">Add</button>
+                                <select class="size" name="size_cafe_latte" form="order-form" aria-label="Size for Cafe Latte"><option value="16 oz">16 oz - ₱69</option><option value="22 oz">22 oz - ₱79</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_cafe_latte" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Cafe Latte"></label>
                             </li>
                             <img class="cat-photo" src="images/mocha.jpg">
-                            <li class="item" data-name="Mocha">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Mocha</span></div>
-                                <select class="size" aria-label="Size for Mocha"><option value="69" data-size="16 oz">16 oz - ₱69</option><option value="79" data-size="22 oz">22 oz - ₱79</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Mocha to cart"></button>
+                                <select class="size" name="size_mocha" form="order-form" aria-label="Size for Mocha"><option value="16 oz">16 oz - ₱69</option><option value="22 oz">22 oz - ₱79</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_mocha" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Mocha"></label>
                             </li>
                         </ul>
                     </div>
@@ -275,22 +283,22 @@
                         <h3>Fruit Soda</h3>
                         <img class="cat-photo" src="images/lychee.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Lychee Soda">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Lychee Soda</span></div>
-                                <select class="size" aria-label="Size for Lychee Soda"><option value="40" data-size="Small">Small - ₱40</option><option value="50" data-size="Medium">Medium - ₱50</option><option value="60" data-size="Large">Large - ₱60</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Lychee Soda to cart">Add</button>
+                                <select class="size" name="size_lychee_soda" form="order-form" aria-label="Size for Lychee Soda"><option value="Small">Small - ₱40</option><option value="Medium">Medium - ₱50</option><option value="Large">Large - ₱60</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_lychee_soda" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Lychee Soda"></label>
                             </li>
                             <img class="cat-photo" src="images/bluelemonade.jpg">
-                            <li class="item" data-name="Blue Lemonade">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Blue Lemonade</span></div>
-                                <select class="size" aria-label="Size for Blue Lemonade"><option value="40" data-size="Small">Small - ₱40</option><option value="50" data-size="Medium">Medium - ₱50</option><option value="60" data-size="Large">Large - ₱60</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Blue Lemonade to cart">Add</button>
+                                <select class="size" name="size_blue_lemonade" form="order-form" aria-label="Size for Blue Lemonade"><option value="Small">Small - ₱40</option><option value="Medium">Medium - ₱50</option><option value="Large">Large - ₱60</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_blue_lemonade" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Blue Lemonade"></label>
                             </li>
                             <img class="cat-photo" src="images/strawberry soda.jpg">
-                            <li class="item" data-name="Strawberry Soda">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Strawberry Soda</span></div>
-                                <select class="size" aria-label="Size for Strawberry Soda"><option value="40" data-size="Small">Small – ₱40</option><option value="50" data-size="Medium">Medium – ₱50</option><option value="60" data-size="Large">Large – ₱60</option></select>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Strawberry Soda to cart">Add</button>
+                                <select class="size" name="size_strawberry_soda" form="order-form" aria-label="Size for Strawberry Soda"><option value="Small">Small – ₱40</option><option value="Medium">Medium – ₱50</option><option value="Large">Large – ₱60</option></select>
+                                <label class="qty-field">Qty <input type="number" name="qty_strawberry_soda" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Strawberry Soda"></label>
                             </li>
                         </ul>
                     </div>
@@ -298,103 +306,92 @@
                         <h3>Shakes</h3>
                         <img class="cat-photo" src="images/mangoshake.jpg">
                         <ul class="items">
-                            <li class="item" data-name="Mango Shake" data-price="99">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Mango Shake</span></div>
                                 <span class="item-price">₱99</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Mango Shake to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_mango_shake" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Mango Shake"></label>
                             </li>
                             <img class="cat-photo" src="images/chocolate shake.jpg">
-                            <li class="item" data-name="Chocolate Shake" data-price="99">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Chocolate Shake</span></div>
                                 <span class="item-price">₱99</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Chocolate Shake to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_chocolate_shake" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Chocolate Shake"></label>
                             </li>
                             <img class="cat-photo" src="images/cookies&cream.jpg">
-                            <li class="item" data-name="Cookies &amp; Cream Shake" data-price="99">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Cookies &amp; Cream Shake</span></div>
                                 <span class="item-price">₱99</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Cookies &amp; Cream Shake to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_cookies_cream_shake" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Cookies &amp; Cream Shake"></label>
                             </li>
                         </ul>
                     </div>
                     <div class="menu-cat" data-group="addons">
                         <h3>Add-ons</h3>
                         <ul class="items">
-                            <li class="item" data-name="Add Cream Cheese" data-price="15">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Add Cream Cheese</span><span class="item-note">For milk tea</span></div>
                                 <span class="item-price">₱15</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Add Cream Cheese to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_add_cream_cheese" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Add Cream Cheese"></label>
                             </li>
-                            <li class="item" data-name="Add Chocolate Fudge" data-price="10">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Add Chocolate Fudge</span><span class="item-note">For milk tea</span></div>
                                 <span class="item-price">₱10</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Add Chocolate Fudge to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_add_chocolate_fudge" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Add Chocolate Fudge"></label>
                             </li>
-                            <li class="item" data-name="Extra Unli Rice" data-price="20">
+                            <li class="item">
                                 <div class="item-info"><span class="item-name">Extra Unli Rice</span><span class="item-note">For wings meals</span></div>
                                 <span class="item-price">₱20</span>
-                                <button class="btn btn-sm add" type="button" aria-label="Add Extra Unli Rice to cart">Add</button>
+                                <label class="qty-field">Qty <input type="number" name="qty_extra_unli_rice" form="order-form" min="0" max="20" value="0" inputmode="numeric" aria-label="Quantity of Extra Unli Rice"></label>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!--CART & CHECKOUT-->
-                <aside class="cart" aria-labelledby="cart-title">
-                    <h2 id="cart-title">Your Cart</h2>
 
-                    <div id="checkout-area">
-                        <ul class="cart-lines" id="cart-lines"></ul>
+                <aside class="cart" id="order-details" aria-labelledby="order-title">
+                    <h2 id="order-title">Your Order</h2>
+                    <p class="cart-note">Set the quantity (Qty) of each item you want from the menu, then fill in your details below.</p>
 
-                        <dl class="totals">
-                            <div><dt>Subtotal</dt><dd id="cart-subtotal">₱0</dd></div>
-                            <div><dt>Delivery Fee</dt><dd id="cart-fee">Choose Area</dd></div>
-                            <div class="grand"><dt>Total</dt><dd id="cart-total">₱0</dd></div>
-                        </dl>
 
-                        <form id="checkout-form">
-                            <label class="field">Full name
-                                <input type="text" name="name" autocomplete="name" required>
-                            </label>
-                            <label class="field">Mobile Number
-                                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+ ()\-]{7,15}" title="Enter a valid mobile number" required>
-                            </label>
-                            <label class="field">Delivery Address
-                                <textarea name="address" rows="3" autocomplete="street-address" required></textarea>
-                            </label>
-                            <label class="field">Delivery Area
-                                <select name="area" id="area" required>
-                                    <option value="">Select your area</option>
-                                    <option value="30" data-area="Dologon Crossing">Dologon Crossing - ₱30 (20-30 min)</option>
-                                    <option value="50" data-area="Maramag Poblacion">Maramag Poblacion - ₱50 (30-45 min)</option>
-                                    <option value="80" data-area="Nearby Barangays">Nearby Barangays - ₱80 (45-60 min)</option>
-                                </select>
-                            </label>
+                    <form id="order-form" action="#">
+                        <label class="field">Full name
+                            <input type="text" name="name" autocomplete="name" required>
+                        </label>
+                        <label class="field">Mobile Number
+                            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+ ()\-]{7,15}" title="Enter a valid mobile number" required>
+                        </label>
+                        <label class="field">Delivery Address
+                            <textarea name="address" rows="3" autocomplete="street-address" required></textarea>
+                        </label>
+                        <label class="field">Delivery Area
+                            <select name="area" required>
+                                <option value="">Select your area</option>
+                                <option value="Dologon Crossing">Dologon Crossing - ₱30 (20-30 min)</option>
+                                <option value="Maramag Poblacion">Maramag Poblacion - ₱50 (30-45 min)</option>
+                                <option value="Nearby Barangays">Nearby Barangays - ₱80 (45-60 min)</option>
+                            </select>
+                        </label>
 
-                            <fieldset>
-                                <legend>Payment Method</legend>
-                                <div class="pay-options">
-                                    <label class="pay-option"><input type="radio" name="payment" value="gcash" required>GCash</label>
-                                    <label class="pay-option"><input type="radio" name="payment" value="maya">Maya</label>
-                                    <label class="pay-option"><input type="radio" name="payment" value="card">Debit/Credit Card</label>
-                                    <label class="pay-option"><input type="radio" name="payment" value="cod">Cash on Delivery</label>
-                                </div>
-                            </fieldset>
-                            <p class="pay-note" id="pay-note" hidden></p>
+                        <fieldset>
+                            <legend>Payment Method</legend>
+                            <div class="pay-options">
+                                <label class="pay-option"><input type="radio" name="payment" value="gcash" required>GCash</label>
+                                <label class="pay-option"><input type="radio" name="payment" value="maya">Maya</label>
+                                <label class="pay-option"><input type="radio" name="payment" value="card">Debit/Credit Card</label>
+                                <label class="pay-option"><input type="radio" name="payment" value="cod">Cash on Delivery</label>
+                            </div>
+                        </fieldset>
+                        <p class="pay-note">We will confirm your total, including the delivery fee, and send a payment request or link by SMS. For Cash on Delivery, pay the rider when your order arrives.</p>
 
-                            <button class="btn" type="submit">Place Order</button>
-                        </form>
-                    </div>
-
-                    <div class="order-confirm" id="order-confirm" tabindex="-1" hidden></div>
+                        <button class="btn" type="submit">Place Order</button>
+                    </form>
                 </aside>
             </div>
         </section>
 
-        <a class="btn cart-fab" href="#cart">View cart (<span data-cart-count>0</span>)</a>
-        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <a class="btn cart-fab" href="#order-details">Go to order form</a>
 
-        <!--FOOTER-->
+
         <footer>
             <ul>
                 <li><a href="#">FAQ</a></li>

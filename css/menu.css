@@ -29,23 +29,35 @@
   background: var(--cream);
 }
 
-.filter-input:checked + .chip {
+#f-all:checked ~ .filters label[for="f-all"],
+#f-signature:checked ~ .filters label[for="f-signature"],
+#f-meals:checked ~ .filters label[for="f-meals"],
+#f-snacks:checked ~ .filters label[for="f-snacks"],
+#f-sweets:checked ~ .filters label[for="f-sweets"],
+#f-drinks:checked ~ .filters label[for="f-drinks"],
+#f-addons:checked ~ .filters label[for="f-addons"] {
   background: var(--brown);
   border-color: var(--brown);
   color: var(--cream);
 }
 
-.filter-input:focus-visible + .chip {
+#f-all:focus-visible ~ .filters label[for="f-all"],
+#f-signature:focus-visible ~ .filters label[for="f-signature"],
+#f-meals:focus-visible ~ .filters label[for="f-meals"],
+#f-snacks:focus-visible ~ .filters label[for="f-snacks"],
+#f-sweets:focus-visible ~ .filters label[for="f-sweets"],
+#f-drinks:focus-visible ~ .filters label[for="f-drinks"],
+#f-addons:focus-visible ~ .filters label[for="f-adodns"] {
   outline: 3px solid var(--terracotta);
   outline-offset: 2px;
 }
 
-#order:has(#f-signature:checked) .menu-cat:not([data-group="signature"]),
-#order:has(#f-meals:checked) .menu-cat:not([data-group="meals"]),
-#order:has(#f-snacks:checked) .menu-cat:not([data-group="snacks"]),
-#order:has(#f-sweets:checked) .menu-cat:not([data-group="sweets"]),
-#order:has(#f-drinks:checked) .menu-cat:not([data-group="drinks"]),
-#order:has(#f-addons:checked) .menu-cat:not([data-group="addons"]) {
+#f-signature:checked ~ .store .menu-cat:not([data-group="signature"]),
+#f-meals:checked ~ .store .menu-cat:not([data-group="meals"]),
+#f-snacks:checked ~ .store .menu-cat:not([data-group="snacks"]),
+#f-sweets:checked ~ .store .menu-cat:not([data-group="sweets"]),
+#f-drinks:checked ~ .store .menu-cat:not([data-group="drinks"]),
+#f-addons:checked ~ .store .menu-cat:not([data-group="addons"]) {
   display: none;
 }
 
