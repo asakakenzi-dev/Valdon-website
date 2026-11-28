@@ -1,8 +1,8 @@
 :root {
-  --brown: #5C3D2E;   /* primary */
-  --cream: #FFF6E9;   /* background */
-  --terracotta: #E07A3F; /* buttons */
-  --olive: #6B7F4E;   /* highlights */
+  --brown: #5C3D2E;
+  --cream: #FFF6E9;
+  --terracotta: #E07A3F; 
+  --olive: #6B7F4E;
   --text: #2B2B2B;
 }
 * { 
@@ -243,7 +243,7 @@ nav ul a[aria-current="page"] {
   border-radius: 3px;
 }
 
-/* Title band at the top of the inner pages */
+
 .page-head {
   text-align: center;
   padding: 48px 20px;
@@ -261,7 +261,7 @@ nav ul a[aria-current="page"] {
   margin: 12px auto 0;
 }
 
-/* Form labels */
+
 fieldset {
   border: 0;
   padding: 0;
